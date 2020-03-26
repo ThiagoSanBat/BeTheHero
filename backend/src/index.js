@@ -8,7 +8,11 @@ const app = express();
 //     origin : 'host'
 // }));
 
-app.use(cors());
+const corsOptions = {
+    exposedHeaders: 'X-Total-Count',
+};
+
+app.use(cors(corsOptions));
 
 /**
  * Transforma automaticamente as infos em JSON
